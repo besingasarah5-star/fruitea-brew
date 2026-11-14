@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f7f4e9">
+  <title>Fruitea Brew | Your Healthy Milk Tea Alternative</title>
+  <meta name="description" content="Refreshing fruit tea, fruit milk tea, and fruit yogurt tea with customizable sugar levels in Valencia City, Bukidnon.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --cream: #f7f4e9;
+      --paper: #fffdf6;
+      --green: #315b43;
+      --green-dark: #203e2e;
+      --lime: #d8e7a7;
+      --orange: #f4a45e;
+      --pink: #f2b8ad;
+      --ink: #24352a;
+      --muted: #667268;
+      --line: rgba(49,91,67,.15);
+      --shadow: 0 18px 55px rgba(38,66,47,.11);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: var(--cream); color: var(--ink); font-family: "DM Sans", sans-serif; }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; }
+    .wrap { width: min(1120px, calc(100% - 44px)); margin: auto; }
+    .nav { height: 82px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { display: flex; align-items: center; gap: 11px; font-weight: 700; letter-spacing: -.5px; font-size: 1.15rem; }
+    .brand-mark { width: 39px; height: 39px; display: grid; place-items: center; border-radius: 14px 14px 14px 5px; background: var(--green); color: white; font-size: 1.2rem; }
+    .brand small { display: block; font-size: .62rem; color: var(--muted); letter-spacing: 1.6px; text-transform: uppercase; font-weight: 600; margin-top: 2px; }
+    .nav-links { display: flex; align-items: center; gap: 31px; color: #526257; font-size: .9rem; font-weight: 600; }
+    .nav-links a:hover { color: var(--green); }
+    .nav-cta, .btn { display: inline-flex; justify-content: center; align-items: center; gap: 9px; padding: 13px 21px; border-radius: 999px; background: var(--green); color: white; font-weight: 700; border: 0; cursor: pointer; transition: .2s ease; }
+    .nav-cta:hover, .btn:hover { background: var(--green-dark); transform: translateY(-2px); }
+    .menu-toggle { display: none; background: none; border: 0; font-size: 1.6rem; color: var(--green); cursor: pointer; }
+    .hero { padding: 48px 0 80px; display: grid; grid-template-columns: 1.03fr .97fr; align-items: center; gap: 50px; min-height: 590px; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 8px; padding: 8px 13px; background: #e8edcf; border-radius: 99px; color: var(--green); font-size: .75rem; font-weight: 700; letter-spacing: 1.1px; text-transform: uppercase; }
+    h1, h2, h3 { font-family: "Playfair Display", Georgia, serif; }
+    h1 { font-size: clamp(3.3rem, 6.2vw, 5.6rem); line-height: .99; letter-spacing: -3px; margin: 23px 0 22px; color: var(--green-dark); }
+    h1 em { color: #df8d4b; font-style: normal; }
+    .hero-copy { max-width: 510px; color: var(--muted); line-height: 1.8; font-size: 1.05rem; }
+    .hero-actions { display: flex; align-items: center; gap: 20px; margin-top: 30px; flex-wrap: wrap; }
+    .text-link { color: var(--green); font-weight: 700; font-size: .92rem; }
+    .text-link span { margin-left: 5px; }
+    .hero-note { display: flex; gap: 10px; align-items: center; color: var(--muted); font-size: .8rem; margin-top: 30px; }
+    .hero-note strong { color: var(--green); }
+    .hero-art { min-height: 460px; position: relative; display: grid; place-items: center; }
+    .sun { position: absolute; width: 370px; height: 370px; border-radius: 50%; background: #e8edcf; right: 7%; top: 7%; }
+    .blob { position: absolute; width: 310px; height: 390px; border-radius: 48% 52% 40% 60% / 43% 43% 57% 57%; background: #f4c18e; transform: rotate(13deg); right: 10%; top: 12%; }
+    .cup { position: relative; z-index: 2; width: 220px; height: 300px; margin-top: 35px; border-radius: 25px 25px 54px 54px; background: linear-gradient(110deg, rgba(255,255,255,.86), rgba(255,255,255,.42)); border: 5px solid rgba(255,255,255,.9); box-shadow: 0 25px 45px rgba(79,69,43,.2); transform: rotate(-7deg); overflow: visible; }
+    .cup:before { content: ""; position: absolute; left: 50%; transform: translateX(-50%); top: -67px; height: 92px; width: 10px; border-radius: 8px; background: #f5f1df; border: 2px solid white; }
+    .cup:after { content: ""; position: absolute; left: -10px; right: -10px; top: -10px; height: 28px; border-radius: 50%; background: #fffdf6; border: 4px solid white; }
+    .drink { position: absolute; inset: 30px 5px 5px; border-radius: 8px 8px 45px 45px; background: linear-gradient(180deg, #f5d18b 0%, #f5ad69 48%, #e98c59 100%); overflow: hidden; }
+    .drink:before { content: "✦  ✦   ✦"; position: absolute; top: 65px; left: 22px; color: rgba(255,255,255,.58); font-size: 1.8rem; letter-spacing: 12px; transform: rotate(-15deg); }
+    .drink:after { content: ""; position: absolute; width: 190px; height: 60px; background: rgba(255,255,255,.23); border-radius: 50%; left: 10px; top: 10px; }
+    .fruit { position: absolute; z-index: 3; font-size: 4.7rem; filter: drop-shadow(0 10px 9px rgba(55,50,29,.12)); }
+    .fruit.one { top: 45px; left: 6%; transform: rotate(-18deg); }
+    .fruit.two { right: 1%; bottom: 62px; transform: rotate(15deg); font-size: 4rem; }
+    .fruit.three { left: 9%; bottom: 42px; font-size: 3.1rem; }
+    .sticker { position: absolute; z-index: 4; right: 1%; top: 8%; width: 108px; height: 108px; border-radius: 50%; background: var(--green); color: white; display: grid; place-items: center; text-align: center; font-size: .72rem; line-height: 1.35; font-weight: 700; transform: rotate(10deg); box-shadow: var(--shadow); }
+    .section { padding: 88px 0; }
+    .section-head { text-align: center; max-width: 650px; margin: 0 auto 42px; }
+    .section-head h2 { font-size: clamp(2.2rem, 4vw, 3.3rem); color: var(--green-dark); margin: 13px 0; letter-spacing: -1px; }
+    .section-head p { color: var(--muted); line-height: 1.75; margin: 0; }
+    .menu-section { background: var(--paper); }
+    .menu-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .menu-card { padding: 27px; border: 1px solid var(--line); border-radius: 23px; background: white; transition: .2s; }
+    .menu-card:hover { transform: translateY(-5px); box-shadow: var(--shadow); }
+    .menu-visual { height: 155px; border-radius: 17px; display: grid; place-items: center; font-size: 5rem; margin-bottom: 23px; }
+    .menu-card:nth-child(1) .menu-visual { background: #f9e6c8; }
+    .menu-card:nth-child(2) .menu-visual { background: #f4d8cf; }
+    .menu-card:nth-child(3) .menu-visual { background: #e4eacb; }
+    .menu-card h3 { font-size: 1.55rem; margin: 0 0 10px; color: var(--green-dark); }
+    .menu-card p { color: var(--muted); line-height: 1.7; font-size: .91rem; margin: 0; }
+    .menu-tag { display: inline-block; margin-top: 19px; padding: 7px 11px; border-radius: 99px; background: #edf1df; color: var(--green); font-size: .72rem; font-weight: 700; }
+    .why-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 65px; align-items: center; }
+    .why-art { min-height: 390px; background: #e8edcf; border-radius: 35px; position: relative; display: grid; place-items: center; overflow: hidden; }
+    .why-art .big-fruit { font-size: 10rem; z-index: 1; filter: drop-shadow(0 14px 12px rgba(50,70,38,.12)); }
+    .why-art:before, .why-art:after { content: ""; position: absolute; border: 1px solid rgba(49,91,67,.17); border-radius: 50%; width: 320px; height: 320px; }
+    .why-art:after { width: 245px; height: 245px; }
+    .why-copy h2 { color: var(--green-dark); font-size: clamp(2.3rem, 4vw, 3.4rem); line-height: 1.08; margin: 15px 0 18px; }
+    .why-copy p { color: var(--muted); line-height: 1.8; }
+    .benefits { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 27px; }
+    .benefit { display: flex; align-items: flex-start; gap: 11px; font-size: .88rem; font-weight: 600; color: var(--green); }
+    .check { flex: 0 0 25px; width: 25px; height: 25px; display: grid; place-items: center; border-radius: 50%; background: #e8edcf; }
+    .custom { padding: 65px 0; }
+    .custom-inner { background: var(--green); color: white; border-radius: 30px; padding: 55px; display: grid; grid-template-columns: 1fr .85fr; gap: 35px; align-items: center; }
+    .custom h2 { font-size: clamp(2.1rem, 4vw, 3.2rem); line-height: 1.08; margin: 0 0 15px; }
+    .custom p { color: rgba(255,255,255,.78); line-height: 1.75; margin: 0; }
+    .sugar-box { background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.22); border-radius: 20px; padding: 24px; }
+    .sugar-box label { display: block; font-weight: 700; margin-bottom: 14px; }
+    .sugar-options { display: flex; flex-wrap: wrap; gap: 9px; }
+    .sugar-options button { border: 1px solid rgba(255,255,255,.5); border-radius: 99px; color: white; background: transparent; padding: 9px 14px; cursor: pointer; font-size: .8rem; }
+    .sugar-options button.active, .sugar-options button:hover { background: var(--lime); color: var(--green-dark); border-color: var(--lime); }
+    #sugar-message { margin-top: 15px; font-size: .8rem; color: rgba(255,255,255,.8); }
+    .visit { background: var(--paper); padding: 82px 0; }
+    .visit-card { display: grid; grid-template-columns: 1fr 1fr; gap: 35px; align-items: center; }
+    .visit h2 { color: var(--green-dark); font-size: clamp(2.2rem, 4vw, 3.2rem); margin: 12px 0; }
+    .visit p { color: var(--muted); line-height: 1.8; }
+    .address { display: flex; gap: 13px; align-items: flex-start; margin: 22px 0; }
+    .address-icon { width: 42px; height: 42px; flex: 0 0 42px; display: grid; place-items: center; border-radius: 13px; background: #e8edcf; }
+    .address strong { display: block; color: var(--green); margin-bottom: 4px; }
+    .map-panel { min-height: 280px; border-radius: 25px; background: linear-gradient(135deg, #e7edcf, #f6d7b9); display: grid; place-items: center; text-align: center; padding: 30px; }
+    .map-panel .pin { font-size: 3rem; }
+    .map-panel strong { display: block; font-family: "Playfair Display", serif; color: var(--green-dark); font-size: 1.5rem; margin: 10px 0; }
+    .map-panel span { color: #657367; font-size: .88rem; line-height: 1.6; }
+    footer { padding: 28px 0; background: var(--green-dark); color: rgba(255,255,255,.75); font-size: .82rem; }
+    .footer-inner { display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; align-items: center; }
+    footer strong { color: white; }
+    @media (max-width: 800px) {
+      .nav-links { display: none; position: absolute; top: 72px; left: 22px; right: 22px; background: white; padding: 22px; border-radius: 18px; box-shadow: var(--shadow); flex-direction: column; align-items: flex-start; z-index: 10; }
+      .nav-links.open { display: flex; }
+      .menu-toggle { display: block; }
+      .nav-cta { display: none; }
+      .hero { grid-template-columns: 1fr; padding-top: 40px; gap: 10px; }
+      .hero-art { min-height: 390px; }
+      .sun { width: 300px; height: 300px; }
+      .blob { width: 250px; height: 315px; }
+      .cup { transform: scale(.85) rotate(-7deg); }
+      .menu-grid { grid-template-columns: 1fr; }
+      .menu-card { display: grid; grid-template-columns: 115px 1fr; gap: 0 18px; align-items: center; }
+      .menu-visual { grid-row: span 3; height: 125px; margin: 0; font-size: 3.7rem; }
+      .menu-card h3 { align-self: end; }
+      .menu-tag { justify-self: start; }
+      .why-grid, .custom-inner, .visit-card { grid-template-columns: 1fr; gap: 30px; }
+      .why-art { min-height: 300px; }
+      .custom-inner { padding: 35px 27px; }
+      .section { padding: 65px 0; }
+    }
+    @media (max-width: 480px) {
+      .wrap { width: min(100% - 32px, 1120px); }
+      h1 { font-size: 3.35rem; }
+      .hero-art { min-height: 330px; }
+      .sun { width: 250px; height: 250px; }
+      .blob { width: 210px; height: 270px; }
+      .cup { transform: scale(.72) rotate(-7deg); }
+      .sticker { width: 85px; height: 85px; font-size: .62rem; }
+      .benefits { grid-template-columns: 1fr; }
+      .menu-card { grid-template-columns: 95px 1fr; padding: 18px; }
+      .menu-visual { height: 110px; font-size: 3rem; }
+    }
+  </style>
+</head>
+<body>
+  <header class="wrap">
+    <nav class="nav" aria-label="Main navigation">
+      <a class="brand" href="#home" aria-label="Fruitea Brew home">
+        <span class="brand-mark">🍃</span>
+        <span>Fruitea Brew<small>Freshness in every sip</small></span>
+      </a>
+      <div class="nav-links" id="navLinks">
+        <a href="#home">Home</a><a href="#menu">Our Drinks</a><a href="#about">About Us</a><a href="#visit">Find Us</a>
+      </div>
+      <a class="nav-cta" href="#menu">Explore our drinks ↗</a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Open navigation" aria-expanded="false">☰</button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero wrap" id="home">
+      <div>
+        <span class="eyebrow">🍊 A fresher kind of tea</span>
+        <h1>Your tea time,<br><em>re-fruited.</em></h1>
+        <p class="hero-copy">Meet Fruitea Brew — refreshing fruit-based drinks made for your everyday cravings. Enjoy the flavors you love, with sugar levels you can customize.</p>
+        <div class="hero-actions">
+          <a class="btn" href="#menu">Discover the menu <span>→</span></a>
+          <a class="text-link" href="#about">Our story <span>↗</span></a>
+        </div>
+        <div class="hero-note"><span>🌿</span><span><strong>Fruit-inspired choices</strong> · Made to suit your taste</span></div>
+      </div>
+      <div class="hero-art" aria-label="Illustration of a refreshing fruit tea">
+        <div class="sun"></div><div class="blob"></div>
+        <span class="fruit one">🍊</span><span class="fruit two">🍓</span><span class="fruit three">🍋</span>
+        <div class="cup"><div class="drink"></div></div>
+        <div class="sticker">FRESH<br>FRUIT<br>VIBES ✦</div>
+      </div>
+    </section>
+
+    <section class="section menu-section" id="menu">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="eyebrow">Made for your mood</span>
+          <h2>A little fruity. A lot refreshing.</h2>
+          <p>Find your new favorite from our fruit-inspired tea selections. Choose the drink that matches your taste and make it yours.</p>
+        </div>
+        <div class="menu-grid">
+          <article class="menu-card">
+            <div class="menu-visual">🍑</div>
+            <h3>Fruit Tea</h3>
+            <p>A bright, refreshing blend of brewed tea and fruit flavors — light, fruity, and easy to enjoy.</p>
+            <span class="menu-tag">Fresh & refreshing</span>
+          </article>
+          <article class="menu-card">
+            <div class="menu-visual">🥛</div>
+            <h3>Fruit Milk Tea</h3>
+            <p>A creamy take on fruit tea, bringing together brewed tea, fruit flavor, and a smooth milk finish.</p>
+            <span class="menu-tag">Creamy & fruity</span>
+          </article>
+          <article class="menu-card">
+            <div class="menu-visual">🫐</div>
+            <h3>Fruit Yogurt Tea</h3>
+            <p>A refreshing fruit-and-yogurt-inspired tea option for a different kind of sipping experience.</p>
+            <span class="menu-tag">Tangy & delightful</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section wrap" id="about">
+      <div class="why-grid">
+        <div class="why-art"><div class="big-fruit">🍓🍋</div></div>
+        <div class="why-copy">
+          <span class="eyebrow">The Fruitea Brew idea</span>
+          <h2>Your favorite tea moment, with more choices.</h2>
+          <p>Fruitea Brew was created to offer an enjoyable alternative to traditional milk tea. We bring together brewed tea and different fruit flavors, with customizable sugar levels so customers can choose what suits their preferences.</p>
+          <div class="benefits">
+            <div class="benefit"><span class="check">✓</span><span>Customizable sugar levels</span></div>
+            <div class="benefit"><span class="check">✓</span><span>Fruit-based drink choices</span></div>
+            <div class="benefit"><span class="check">✓</span><span>Refreshing drink varieties</span></div>
+            <div class="benefit"><span class="check">✓</span><span>Affordable everyday treats</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="custom">
+      <div class="wrap">
+        <div class="custom-inner">
+          <div>
+            <span class="eyebrow" style="background:rgba(255,255,255,.15);color:#f4f6e8;">Make it yours</span>
+            <h2>Sweetness that suits you.</h2>
+            <p>Everyone has their own kind of sweet spot. Fruitea Brew offers customizable sugar levels, so you can choose the sweetness you prefer with your drink.</p>
+          </div>
+          <div class="sugar-box">
+            <label>Choose a sweetness level</label>
+            <div class="sugar-options" role="group" aria-label="Sweetness level">
+              <button class="active" data-level="Regular">Regular</button>
+              <button data-level="Less sugar">Less sugar</button>
+              <button data-level="Light sugar">Light sugar</button>
+              <button data-level="No added sugar">No added sugar</button>
+            </div>
+            <div id="sugar-message" aria-live="polite">Your choice: Regular sweetness.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="visit" id="visit">
+      <div class="wrap visit-card">
+        <div>
+          <span class="eyebrow">Come say hello</span>
+          <h2>Your next refreshing stop.</h2>
+          <p>Drop by Fruitea Brew for a fruit-inspired drink. We look forward to serving students, employees, and nearby residents in Valencia City.</p>
+          <div class="address">
+            <span class="address-icon">📍</span>
+            <div><strong>Visit Fruitea Brew</strong><span>Fr. Manlio Caroselli, SJ Street (Mabini Street), Purok 9, Poblacion, Valencia City, Bukidnon — near San Agustin Institute of Technology (SAIT).</span></div>
+          </div>
+          <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Fr.+Manlio+Caroselli+Street+Purok+9+Poblacion+Valencia+City+Bukidnon" target="_blank" rel="noopener">Get directions ↗</a>
+        </div>
+        <div class="map-panel">
+          <div><div class="pin">📍</div><strong>Fruitea Brew</strong><span>Purok 9, Poblacion<br>Valencia City, Bukidnon<br><br>Near SAIT</span></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-inner">
+      <div><strong>🍃 Fruitea Brew</strong> · Your Healthy Milk Tea Alternative</div>
+      <div>Freshness in every sip. © <span id="year"></span> Fruitea Brew</div>
+    </div>
+  </footer>
+
+  <script>
+    const toggle = document.getElementById('menuToggle');
+    const links = document.getElementById('navLinks');
+    toggle.addEventListener('click', () => {
+      const open = links.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', String(open));
+      toggle.textContent = open ? '✕' : '☰';
+    });
+    links.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+      links.classList.remove('open');
+      toggle.setAttribute('aria-expanded', 'false');
+      toggle.textContent = '☰';
+    }));
+    document.querySelectorAll('.sugar-options button').forEach(button => {
+      button.addEventListener('click', () => {
+        document.querySelectorAll('.sugar-options button').forEach(item => item.classList.remove('active'));
+        button.classList.add('active');
+        document.getElementById('sugar-message').textContent = 'Your choice: ' + button.dataset.level + '.';
+      });
+    });
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
